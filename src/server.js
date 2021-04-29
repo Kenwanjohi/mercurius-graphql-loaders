@@ -1,7 +1,7 @@
 const mercurius = require('mercurius')
 const { readFileSync } = require('fs')
 const { makeExecutableSchema } = require('@graphql-tools/schema')
-const resolvers = require('./resolvers')
+const { loaders, resolvers }= require('./resolvers')
 const dbconnector = require('./db')
 
 const fastify = require('fastify')({logger: true})
@@ -20,6 +20,7 @@ fastify.register(mercurius,{
           client: fastify.db.client
         } 
     },
+    loaders,
     graphiql: 'playground'
 })
 

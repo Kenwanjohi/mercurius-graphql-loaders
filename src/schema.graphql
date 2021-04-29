@@ -5,7 +5,7 @@ type Artist {
 type Song {
   songid: ID!
   songname: String!
-  artists: [Artist!]!
+  artists: [Artist]
   genre: String
 }
 type Query {
