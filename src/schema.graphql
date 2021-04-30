@@ -1,13 +1,9 @@
-type Artist {
-  artistid: ID!
-  artistname: String!
-}
 type Song {
   songid: ID!
   songname: String!
-  artists: [Artist]
-  genre: String
+  genre: String!
 }
 type Query {
   songs: [Song]
 }
+
